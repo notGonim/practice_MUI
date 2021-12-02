@@ -1,6 +1,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import { Button, Grid, Typography } from "@mui/material";
+import DesktopCategories from "./DesktopCategories";
 
 const ProductContainer = () => {
   return (
@@ -73,6 +74,7 @@ const ProductContainer = () => {
           </Box>
         </Grid>
       </Grid>
+      <DesktopCategories />
     </Box>
   );
 };

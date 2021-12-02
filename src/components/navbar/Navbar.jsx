@@ -10,18 +10,17 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 
 const Navbar = () => {
-   const [anchorEl, setAnchorEl] = useState(null);
-   const open = Boolean(anchorEl);
-   const handleClick = (event) => {
-     setAnchorEl(event.currentTarget);
-   };
-   const handleClose = () => {
-     setAnchorEl(null);
-   };
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
-   
   return (
-    <AppBar sx={{ backgroundColor: "white" }}>
+    <AppBar sx={{ backgroundColor: "white"}}>
       <Toolbar>
         <Box
           component="div"
@@ -50,7 +49,7 @@ const Navbar = () => {
               Home
             </Typography>
             <Typography
-              sx={{ marginRight: "10px", cursor: "pointer", color: "black" }}
+              sx={{ mr: "10px", cursor: "pointer", color: "black" }}
             >
               Shop
             </Typography>
@@ -94,7 +93,7 @@ const Navbar = () => {
           </Box>
           {/*  Buttons */}
           <Box>
-            <Button variant="outlined">Account</Button>
+            <Button  sx={{backgroundColor:'#dc2a68' ,color:'white'}}>Account</Button>
           </Box>
         </Box>
       </Toolbar>

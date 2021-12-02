@@ -1,9 +1,20 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import { Button, Grid, Typography } from "@mui/material";
+import {
+  Button,
+  Grid,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import DesktopCategories from "./DesktopCategories";
+import MobileCategories from "./MobileCategories";
+import ProductList from "./ProductList";
 
 const ProductContainer = () => {
+  const theme = useTheme();
+  const matchBreakPoint = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Box sx={{ minHeight: "60vh", mt: -23, mr: 2, ml: 2 }}>
       <Grid container spacing={2} sx={{ mb: 4 }}>
@@ -74,7 +85,19 @@ const ProductContainer = () => {
           </Box>
         </Grid>
       </Grid>
-      <DesktopCategories />
+      {matchBreakPoint ? <MobileCategories /> : <DesktopCategories />}
+
+      {/*  
+// another way to render 
+
+      <Box sx={{ display: { xs: "none", lg: "block" } }}>
+        <DesktopCategories />{" "}
+      </Box>
+      <Box sx={{ display: { xs: "block", lg: "none" } }}>
+        <MobileCategories />
+      </Box>
+*/}
+      <ProductList />
     </Box>
   );
 };
